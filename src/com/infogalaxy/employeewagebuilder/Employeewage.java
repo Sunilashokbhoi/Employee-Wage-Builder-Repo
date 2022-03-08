@@ -20,12 +20,17 @@ public class Employeewage {
             System.out.println("Employee is Present");
             //UC-3-Employee Work Part Time Or Full Time
             int emp_type = random.nextInt() % 2;
-            if (emp_type == 0) {
+            //UC-4-Solving Using Switch Case Statement
+            switch (emp_type) {
+                case 0:
                 System.out.println("Employye is Part Time");
                 total_wage = WAGE_PER_HR * PART_TIME_HR;
-            } else {
+                break ;
+                case 1:
+                case -1:
                 System.out.println("Employee Is Full Time");
                 total_wage = WAGE_PER_HR * FULL_TIME_HR;
+                break;
             }
         }
         System.out.println("Total Wage=" + total_wage);
