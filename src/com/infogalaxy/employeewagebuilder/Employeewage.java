@@ -10,29 +10,35 @@ public class Employeewage {
         final int WAGE_PER_HR = 20;
         final int FULL_TIME_HR = 8;
         final int PART_TIME_HR = 4;
-        int total_wage = 0;
+        final int WORKING_DAY = 20;
         Random random = new Random();
-        int empAttendance = random.nextInt() % 2;
-        //UC 1 Checking for Employee is Present or Absent
-        if (empAttendance == 0) {
-            System.out.println("Employee is Absent");
-        } else {
-            System.out.println("Employee is Present");
-            //UC-3-Employee Work Part Time Or Full Time
-            int emp_type = random.nextInt() % 2;
-            //UC-4-Solving Using Switch Case Statement
-            switch (emp_type) {
-                case 0:
-                System.out.println("Employye is Part Time");
-                total_wage = WAGE_PER_HR * PART_TIME_HR;
-                break ;
-                case 1:
-                case -1:
-                System.out.println("Employee Is Full Time");
-                total_wage = WAGE_PER_HR * FULL_TIME_HR;
-                break;
+        //UC-5-Calculate Wage For A Month
+        for (int i = 1; i <= WORKING_DAY; i++) {
+            int total_wage = 0;
+            System.out.println("Day=" + i);
+
+            int empAttendance = random.nextInt() % 2;
+            //UC 1 Checking for Employee is Present or Absent
+            if (empAttendance == 0) {
+                System.out.println("Employee is Absent");
+            } else {
+                System.out.println("Employee is Present");
+                //UC-3-Employee Work Part Time Or Full Time
+                int emp_type = random.nextInt() % 2;
+                //UC-4-Solving Using Switch Case Statement
+                switch (emp_type) {
+                    case 0:
+                        System.out.println("Employye is Part Time");
+                        total_wage = WAGE_PER_HR * PART_TIME_HR;
+                        break;
+                    case 1:
+                    case -1:
+                        System.out.println("Employee Is Full Time");
+                        total_wage = WAGE_PER_HR * FULL_TIME_HR;
+                        break;
+                }
             }
+            System.out.println("Total Wage=" + total_wage);
         }
-        System.out.println("Total Wage=" + total_wage);
     }
 }
